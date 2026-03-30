@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build WeatherApp",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-O2",
+                "-o", "${workspaceFolder}/WeatherApp.exe",
+                "${workspaceFolder}/main.cpp",
+                "${workspaceFolder}/imgui/imgui.cpp",
+                "${workspaceFolder}/imgui/imgui_draw.cpp",
+                "${workspaceFolder}/imgui/imgui_tables.cpp",
+                "${workspaceFolder}/imgui/imgui_widgets.cpp",
+                "${workspaceFolder}/imgui/backends/imgui_impl_glfw.cpp",
+                "${workspaceFolder}/imgui/backends/imgui_impl_opengl3.cpp",
+                "-I${workspaceFolder}/imgui",
+                "-I${workspaceFolder}/imgui/backends",
+                "-I${workspaceFolder}/include",
+                "-L${workspaceFolder}/libs",
+                "-lglfw3",
+                "-lopengl32",
+                "-lgdi32",
+                "-luser32",
+                "-lkernel32",
+                "-mwindows"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Builds the ImGui Weather App"
+        }
+    ]
+}
